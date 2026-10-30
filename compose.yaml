@@ -6,5 +6,5 @@ services:
     depends_on:
       - backend
 
-  Backend:
+  backend:
     build: ./backend
