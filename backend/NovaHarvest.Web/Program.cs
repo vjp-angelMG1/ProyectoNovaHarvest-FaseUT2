@@ -56,7 +56,7 @@ app.MapGet("/", () => Results.Content($"""
         <main>
         <h1>Sobre NovaHarvest</h1>
         <p>Proyecto desarrollado en el IES Valle del Jerte.</p>
-        <p>Autor: Raúl Albalat Pérez</p>
+        <p>Autor: Ángel Montero Gregorio</p>
         <p>Versión: 0.1.0</p>
         </main>
          <footer>
