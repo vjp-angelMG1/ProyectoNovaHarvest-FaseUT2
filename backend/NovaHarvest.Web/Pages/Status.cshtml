@@ -1,0 +1,10 @@
+@page
+@model StatusModel
+@{
+    ViewData["Title"] = "Estado del servidor";
+}
+<h1>Estado del servidor</h1>
+<p>Fecha y hora del servidor: @Model.ServerTime.ToString("dd/MM/yyyy HH:mm:ss")</p>
+<p>El servidor que está corriendo esto es: @Model.ServerName</p>
+<p>Llevamos @Model.Visits visitas desde que se arrancó</p>
+<p>Esta página está hecha con ASP.NET Core (Kestrel) usando Razor Pages</p>
