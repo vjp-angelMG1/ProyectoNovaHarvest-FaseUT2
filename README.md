@@ -1,33 +1,48 @@
-
----
-
 ## Memoria
 
-### Arranque
+## Arranque
 
-Para levantar NovaHarvest con Docker, abro una terminal en la carpeta raíz del proyecto y ejecuto Ctrl+shif+ñ:
+Para iniciar NovaHarvest con Docker, abro una terminal en la carpeta raíz del proyecto usando Ctrl+Shift+ñ y ejecuto:
 
-```git
+``` git
+
 docker compose up -d --build
-```
+´´´
 
-Docker construye las imágenes necesarias y arranca los servicios en segundo plano. Después puedo abrir las páginas desde el navegador:
+Docker construye las imágenes y arranca los servicios en segundo plano. Cuando termina, ya puedo acceder al navegador a estas direcciones:
 
 - Inicio: http://localhost:8080/
+
+- Excedentes: http://localhost:8080/surplus
+
 - Sobre el proyecto: http://localhost:8080/about
+
 - Estado del servidor: http://localhost:8080/status
 
-Cuando termino de probar la aplicación, paro y elimino los contenedores con:
+- Justificante: http://localhost:8080/ticket
 
-```git
+- Hoja de estilos: http://localhost:8080/css/site.css
+
+- Logotipo: http://localhost:8080/img/logo.png
+
+Cuando ya he finalizado las pruebas de NovaHarvest, detengo NovaHarvest y elimino los contenedores con:
+
+``` git
+
 docker compose down
-```
+´´´
 
-También puedo ejecutar el backend sin Docker ni nginx. Desde la carpeta raíz del proyecto, ejecuto:
+Si prefiero no usar Docker ni nginx, también puedo arrancar el backend por separado. Necesito tener instalado el SDK de .NET 10. Me dirijo a backend/NovaHarvest.Web/ y lanzo:
 
-```git
-dotnet run --project backend\NovaHarvest.Web\NovaHarvest.Web.csproj
-```
+``` git
+
+dotnet run
+´´´
+
+
+Por defecto me permite entrar en http://localhost:5240/. NovaHarvest muestra las mismas páginas y los mismos archivos estáticos que con Docker. Así, el navegador llega directamente a Kestrel y nginx no interviene.
+---
+
 
 La aplicación muestra en la terminal la dirección en la que está escuchando. Según la configuración actual de `Properties/launchSettings.json`, puedo abrir http://localhost:5296/. En este modo, el navegador se comunica directamente con Kestrel y nginx no interviene.
 
